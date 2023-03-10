@@ -19,6 +19,7 @@ import {
   RADIO_OPTIONS,
   SELECT_OPTIONS,
 } from "../../data/options";
+import WrapperSection from "../../components/Wrappers/WrapperSection";
 
 type Fields = {
   textfield: string;
@@ -30,7 +31,7 @@ type Fields = {
 };
 
 const WithoutValidation = () => {
-  const { control, handleSubmit } = useForm<Fields>({
+  const { control, handleSubmit, watch } = useForm<Fields>({
     defaultValues: {
       textfield: "",
       select: "",
@@ -46,61 +47,65 @@ const WithoutValidation = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(handleOnSubmit)}>
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={6}>
-          <MUIHookFormTextField
-            control={control}
-            name="textfield"
-            label="TextField"
-          />
+    <WrapperSection title="Components">
+      <form onSubmit={handleSubmit(handleOnSubmit)}>
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={6}>
+            <MUIHookFormTextField
+              control={control}
+              name="textfield"
+              label="TextField"
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <MuiHookFormSelect
+              control={control}
+              name="select"
+              label="Select"
+              showDefaultOption
+              options={SELECT_OPTIONS}
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <MUIHookFormAutocomplete
+              control={control}
+              name="autocomplete"
+              label="Autocomplete"
+              options={AUTOCOMPLETE_OPTIONS}
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <MUIHookFormAutocompleteMultiple
+              control={control}
+              name="autocompleteMultiple"
+              label="Autocomplete Multiple"
+              options={AUTOCOMPLETE_MULTIPLE_OPTIONS}
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <MUIHookFormCheckbox
+              control={control}
+              name="checkbox"
+              label="Checkbox"
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <MUIHookFormRadio
+              control={control}
+              name="radio"
+              label="Radio"
+              options={RADIO_OPTIONS}
+            />
+          </Grid>
+          <Grid item xs={12} md={6}></Grid>
+          <Grid item xs={12} display="flex" justifyContent="center">
+            <ButtonLoader type="submit">OK</ButtonLoader>
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={6}>
-          <MuiHookFormSelect
-            control={control}
-            name="select"
-            label="Select"
-            showDefaultOption
-            options={SELECT_OPTIONS}
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <MUIHookFormAutocomplete
-            control={control}
-            name="autocomplete"
-            label="Autocomplete"
-            options={AUTOCOMPLETE_OPTIONS}
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <MUIHookFormAutocompleteMultiple
-            control={control}
-            name="autocompleteMultiple"
-            label="Autocomplete Multiple"
-            options={AUTOCOMPLETE_MULTIPLE_OPTIONS}
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <MUIHookFormCheckbox
-            control={control}
-            name="checkbox"
-            label="Checkbox"
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <MUIHookFormRadio
-            control={control}
-            name="radio"
-            label="Radio"
-            options={RADIO_OPTIONS}
-          />
-        </Grid>
-        <Grid item xs={12} md={6}></Grid>
-        <Grid item xs={12} display="flex" justifyContent="center">
-          <ButtonLoader type="submit">OK</ButtonLoader>
-        </Grid>
-      </Grid>
-    </form>
+        {/* <code>{JSON.stringify(watch("autocomplete"), null, 2)}</code> */}
+        <pre>{JSON.stringify(watch(), null, 4)}</pre>
+      </form>
+    </WrapperSection>
   );
 };
 
