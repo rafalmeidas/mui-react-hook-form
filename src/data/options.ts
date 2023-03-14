@@ -1,8 +1,8 @@
-import { OptionAutocompleteMultiple } from "../components/Inputs/MUIHookFormAutocompleteMultiple/types";
-import { OptionAutocomplete } from "../components/Inputs/MUIHookFormAutocomplete/types";
-import { OptionSelect } from "../components/Inputs/MuiHookFormSelect/types";
+import { OptionAutocompleteMultiple } from "../lib/MUIHookFormAutocompleteMultiple/types";
 import { AutocompleteMultipleOptions, AutocompleteOptions } from "./types";
-import { OptionRadio } from "../components/Inputs/MUIHookFormRadio/types";
+import { OptionAutocomplete } from "../lib/MUIHookFormAutocomplete/types";
+import { OptionSelect } from "../lib/MuiHookFormSelect/types";
+import { OptionRadio } from "../lib/MUIHookFormRadio/types";
 
 import { AUTOCOMPLETE_DATA, SELECT_DATA } from "./data";
 

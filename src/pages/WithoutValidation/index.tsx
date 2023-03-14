@@ -1,16 +1,17 @@
 import { useForm } from "react-hook-form";
 import { Grid } from "@mui/material";
 
-import MUIHookFormAutocompleteMultiple from "../../components/Inputs/MUIHookFormAutocompleteMultiple";
-import MUIHookFormAutocomplete from "../../components/Inputs/MUIHookFormAutocomplete";
-import MUIHookFormTextField from "../../components/Inputs/MUIHookFormTextField";
-import MUIHookFormCheckbox from "../../components/Inputs/MUIHookFormCheckbox";
-import MuiHookFormSelect from "../../components/Inputs/MuiHookFormSelect";
-import MUIHookFormRadio from "../../components/Inputs/MUIHookFormRadio";
-import ButtonLoader from "../../components/ButtonLoader";
+import MUIHookFormAutocompleteMultiple from "../../lib/MUIHookFormAutocompleteMultiple";
+import MUIHookFormAutocomplete from "../../lib/MUIHookFormAutocomplete";
+import WrapperSection from "../../components/Wrappers/WrapperSection";
+import MUIHookFormTextField from "../../lib/MUIHookFormTextField";
+import MUIHookFormCheckbox from "../../lib/MUIHookFormCheckbox";
+import MuiHookFormSelect from "../../lib/MuiHookFormSelect";
+import MUIHookFormRadio from "../../lib/MUIHookFormRadio";
+import ButtonLoader from "../../lib/ButtonLoader";
 
-import { OptionAutocompleteMultiple } from "../../components/Inputs/MUIHookFormAutocompleteMultiple/types";
-import { OptionAutocomplete } from "../../components/Inputs/MUIHookFormAutocomplete/types";
+import { OptionAutocompleteMultiple } from "../../lib/MUIHookFormAutocompleteMultiple/types";
+import { OptionAutocomplete } from "../../lib/MUIHookFormAutocomplete/types";
 import { AutocompleteOptions } from "../../data/types";
 
 import {
@@ -19,7 +20,6 @@ import {
   RADIO_OPTIONS,
   SELECT_OPTIONS,
 } from "../../data/options";
-import WrapperSection from "../../components/Wrappers/WrapperSection";
 
 type Fields = {
   textfield: string;
