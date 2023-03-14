@@ -1,6 +1,8 @@
 {
   "name": "mui-react-hook-form",
   "version": "0.1.0",
+  "author": "Rafael Silva",
+  "license": "MIT",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
